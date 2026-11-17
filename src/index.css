@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #05070f;
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-ink font-sans text-slate-200 antialiased;
+    background-image:
+      radial-gradient(900px 500px at 8% -8%, rgba(47, 128, 255, 0.16), transparent 60%),
+      radial-gradient(800px 480px at 100% 10%, rgba(11, 21, 48, 0.9), transparent 60%);
+    background-attachment: fixed;
+  }
+
+  section[id] {
+    scroll-margin-top: 6rem;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+  }
+
+  ::selection {
+    background: rgba(47, 128, 255, 0.45);
+    color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 2px solid #8ccbff;
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply rounded-2xl border border-white/10 bg-white/[0.04] shadow-[0_8px_40px_rgba(0,0,0,0.35)] backdrop-blur-xl;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-electric px-6 py-3 font-semibold text-white shadow-glow transition hover:bg-[#4a90ff];
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white backdrop-blur transition hover:border-glow/60 hover:bg-white/10;
+  }
+
+  .field {
+    @apply w-full rounded-xl border border-white/10 bg-ink/70 px-4 py-3 text-white transition placeholder:text-mist/60 focus:border-electric focus:outline-none focus:ring-2 focus:ring-electric/30;
+  }
+
+  .spotlight {
+    @apply relative isolate overflow-hidden;
+  }
+
+  .spotlight::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(47, 128, 255, 0.18), transparent 60%);
+  }
+
+  .spotlight:hover::before {
+    opacity: 1;
+  }
+}
+
+@layer utilities {
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+  }
+
+  .skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+    z-index: 200;
+    background: #2f80ff;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+  }
+
+  .has-custom-cursor,
+  .has-custom-cursor * {
+    cursor: none;
+  }
+
+  .has-custom-cursor :is(input, textarea) {
+    cursor: text;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
