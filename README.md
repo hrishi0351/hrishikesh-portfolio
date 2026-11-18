@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Hrishikesh Shelar Portfolio
 
 A 3D portfolio built with React, Vite, Tailwind CSS, React Three Fiber, Framer Motion and Lucide icons.
@@ -42,3 +43,7 @@ Add the same variable under Project Settings, then Environment Variables, in Ver
 6. Vercel gives you a public URL such as `https://your-project-name.vercel.app`.
 
 To use your own domain later, open Project Settings, then Domains.
+=======
+# hrishikesh-portfolio
+Personal portfolio of Hrishikesh Shelar, Full-Stack Developer. Features a 3D hero, animated skills, experience timeline, project cards and a validated contact form.
+>>>>>>> df3b8f0cdefc8f33d42f5e1153826c4c018abac6
