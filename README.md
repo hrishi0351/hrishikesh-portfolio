@@ -46,4 +46,4 @@ To use your own domain later, open Project Settings, then Domains.
 =======
 # hrishikesh-portfolio
 Personal portfolio of Hrishikesh Shelar, Full-Stack Developer. Features a 3D hero, animated skills, experience timeline, project cards and a validated contact form.
->>>>>>> df3b8f0cdefc8f33d42f5e1153826c4c018abac6
+
